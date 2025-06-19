@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pick Your Combo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="bg-wishes text-center d-flex flex-column min-vh-100">
+  <audio autoplay loop>
+    <source src="assets/song.mp3" type="audio/mpeg">
+  </audio>
+  <div class="container py-5 flex-grow-1">
+    <h1 class="display-4 fw-bold">🎁 Choose a Birthday Combo</h1>
+    <p class="lead">Pick any two options for a surprise celebration!</p>
+    <form action="#" class="mt-4">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="form-check text-start">
+            <input class="form-check-input" type="checkbox" value="combo1" id="combo1">
+            <label class="form-check-label" for="combo1">
+              🎈 Combo 1 
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check text-start">
+            <input class="form-check-input" type="checkbox" value="combo2" id="combo2">
+            <label class="form-check-label" for="combo2">
+              🎉 Combo 2 
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4">
+        <a href="combo1.html" class="btn btn-outline-primary me-2">View Combo 1 Details</a>
+        <a href="combo2.html" class="btn btn-outline-success">View Combo 2 Details</a>
+      </div>
+    </form>
+
+    <!-- Customization Section -->
+    <form action="confirm.html" method="GET" class="mt-5 p-4 bg-light rounded shadow">
+      <h3 class="fw-bold mb-3">💡 Have Your Own Surprise Plan?</h3>
+      <p class="mb-3">Share your idea and we might just add it to your day!</p>
+      <textarea name="customIdea" class="form-control mb-3" rows="4" placeholder="E.g., Let's do a late-night rooftop dinner, or maybe a karaoke jam!" required></textarea>
+      <button type="submit" class="btn btn-warning">Submit Custom Surprise</button>
+    </form>
+
+  </div>
+  <footer class="footer">
+    <p class="mb-0">&copy; 2025 Made with 💖 for Hariharan's Birthday</p>
+  </footer>
+
+</body>
+</html>

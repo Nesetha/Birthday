@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirmation</title>
+
+  <!-- Bootstrap and Custom CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body class="bg-wishes text-center d-flex flex-column min-vh-100">
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="assets/song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- 🎟️ Ticket Design -->
+  <div class="ticket text-center">
+    <h2 class="mb-3">🎟️ Birthday Surprise Ticket</h2>
+    <p id="combo-summary" class="lead mb-2"></p>
+    <p>🎉 Enjoy your special day, Hari! 🎉</p>
+    <button onclick="window.print()" class="btn btn-warning mt-3">Take a Screenshot</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto">
+    <p class="mb-0">&copy; 2025 Made with 💖 for Hariharan's Birthday</p>
+  </footer>
+
+  <!-- JavaScript for ticket content -->
+  <script>
+    window.addEventListener('load', () => {
+      const params = new URLSearchParams(window.location.search);
+      const idea = params.get('customIdea');
+      const combo = params.get('combo');
+      const summary = document.getElementById('combo-summary');
+
+      if (idea) {
+        summary.innerHTML = `🎉 <strong>Great choice!</strong><br>"${idea}"<br><em>Thank you for customizing your experience.</em>`;
+      } else if (combo === '1') {
+        summary.innerHTML = "🔑 Combo 1 is confirmed! Get ready for your surprise!";
+      } else if (combo === '2') {
+        summary.innerHTML = "🎢 Combo 2 is confirmed! Fun awaits!";
+      } else {
+        summary.innerHTML = "✅ Surprise Confirmed!";
+      }
+
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+    });
+  </script>
+</body>
+</html>
